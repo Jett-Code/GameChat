@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatApp</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+   
+</head>
+<body>
+    <div class="chatbox">
+        <div  class="msg" id="chat-message">
+            
+            
+            
+        </div>
+        <div id="chat-input">
+        <form id="chat-form">
+            <input id="i" type="text" placeholder="Press Enter to Chat" autocomplete="off" tabindex="0">
+            <input type="submit" hidden />
+        </form>
+        </div>
+    </div>
+
+    <script>
+        console.log("in js")
+        document.addEventListener("keydown",function(e) {
+            if(e.key === "Enter"){
+                console.log("in enter");
+                document.getElementById("i").focus();
+            }
+        });
+
+        document.addEventListener("keyup",function(e) {
+            e.preventDefault();
+            if(e.key === "Tab"){
+                
+                console.log("in backspace");
+                document.getElementById("i").blur();
+            }
+        });
+        </script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
